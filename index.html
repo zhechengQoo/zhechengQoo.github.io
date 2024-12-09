@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 - 主頁</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000000; /* 極致黑 */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* 容器寬度適應屏幕 */
+            text-align: center;
+            display: flex;
+            justify-content: center; /* 居中內容 */
+            align-items: center;
+            overflow: hidden; /* 防止圖片超出容器 */
+        }
+
+        .cover-image {
+            width: 85%; /* 放大圖片 */
+            max-width: 1200px; /* 限制最大寬度 */
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+            object-fit: cover; /* 保持圖片比例並覆蓋容器 */
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .button {
+            position: absolute;
+            bottom: -70px; /* 使兩張圖片之間有更多空間 */
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        .button img {
+            width: 300px; /* 放大圖片1倍 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .button img:hover {
+            transform: scale(1.2); /* 放大比例調整為1.2 */
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="IMG 1.jpg" alt="主頁封面" class="cover-image">
+        <div class="button">
+            <a href="page2.html">
+                <img src="Text 1.png" alt="跳轉按鈕">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
